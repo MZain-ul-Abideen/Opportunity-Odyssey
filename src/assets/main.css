@@ -1,0 +1,21 @@
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --color-1: #D28D0D;
+    --color-2: #EDA323;
+    --color-3: #F4CD2A;
+    --color-4: #FDF68C;
+    --color-5: #FFFDB8; 
+    --ui-1: #1f1f1f; 
+    --ui-2: #ececec; 
+  }
+
+  body {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+    background-color: #f8f8f8;
+  }
