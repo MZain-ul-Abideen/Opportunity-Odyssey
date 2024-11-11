@@ -1,41 +1,82 @@
-<script setup>
-import { defineProps } from 'vue';
+    <script setup>
+    import { defineProps, ref, computed } from 'vue';
 
-defineProps ({
-    jobget: Object
-});
+    const packet = defineProps({
+        jobget: Object
+    });
 
-// console.log(jobs)
-</script>
+    const fulldesc = ref(false);
 
-<template>
-    <div class="bg-white rounded-xl shadow-md relative">
-        <div class="p-4">
-            <div class="mb-6">
-                <div class="text-gray-600 my-2">{{ jobget.type }}</div>
-                <h3 class="text-xl font-bold">{{ jobget.title }}</h3>
-            </div>
+    const showfulldesc = () => {
+        fulldesc.value = !fulldesc.value;
+    }
 
-            <div class="mb-5">
-                {{ jobget.description }}
-            </div>
+    const trim_desc = computed(() => {
+        let desc = packet.jobget.description;
+        if (!fulldesc.value) {
+            desc = desc.substring(0, 90) + '...';
+        }
+        return desc;
+    })
+    </script>
 
-            <h3 class="text-green-500 mb-2">{{ jobget.salarys }}</h3>
-
-            <div class="border border-gray-100 mb-5"></div>
-
-            <div class="flex flex-col lg:flex-row justify-between mb-4">
-                <div class="text-orange-700 mb-3">
-                    <i class="fa-solid fa-location-dot text-lg"></i>
-                    {{ jobget.location }}
+    <template>
+        <div class="bg-white rounded-xl shadow-md relative">
+            <div class="p-4">
+                <div class="mb-6">
+                    <div class="text-gray-600 my-2">{{ jobget.type }}</div>
+                    <h3 class="text-xl font-bold">{{ jobget.title }}</h3>
                 </div>
-                <a href=""
-                    class="h-[36px] bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-center text-sm">
-                    Read More
-                </a>
+
+                <div class="mb-5">
+                    {{ trim_desc }}
+                </div>
+                <div>
+                    <button @click="showfulldesc()" class="more_btn">{{ fulldesc ? 'less' : 'more' }}</button>
+                </div>
+
+                <h3 class="text-green-500 mb-2">{{ jobget.salarys }}</h3>
+
+                <div class="border border-gray-100 mb-5"></div>
+
+                <div class="flex flex-col lg:flex-row justify-between mb-4">
+                    <div class="location mb-3">
+                        <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8.5 7C8.5 6.33696 8.76339 5.70107 9.23223 5.23223C9.70107 4.76339 10.337 4.5 11 4.5C12.1 4.5 13.03 5.21 13.37 6.19C13.45 6.45 13.5 6.72 13.5 7C13.5 7.3283 13.4353 7.65339 13.3097 7.95671C13.1841 8.26002 12.9999 8.53562 12.7678 8.76777C12.5356 8.99991 12.26 9.18406 11.9567 9.3097C11.6534 9.43534 11.3283 9.5 11 9.5C9.91 9.5 9 8.81 8.64 7.84C8.55 7.58 8.5 7.29 8.5 7ZM2 7C2 11.5 7.08 17.66 8 18.81L7 20C7 20 0 12.25 0 7C0 3.83 2.11 1.15 5 0.29C3.16 1.94 2 4.33 2 7ZM11 0C14.86 0 18 3.13 18 7C18 12.25 11 20 11 20C11 20 4 12.25 4 7C4 3.13 7.14 0 11 0ZM11 2C8.24 2 6 4.24 6 7C6 8 6 10 11 16.71C16 10 16 8 16 7C16 4.24 13.76 2 11 2Z"
+                                fill="#D28D0D" />
+                        </svg>
+                        <span class="mx-2">
+                            {{ jobget.location }}
+                        </span>
+                    </div>
+                    <a :href="'/jobs/' + jobget.id" class="h-[36px] buttons px-4 py-2 rounded-lg text-center text-sm">
+                        Read More
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-</template>
+    </template>
 
-<style></style>
+    <style scoped>
+    .buttons {
+        background-color: var(--color-1);
+        color: var(--ui-2);
+    }
+
+    .buttons:hover {
+        background-color: var(--color-2);
+        transition: all 0.1s ease;
+    }
+
+    .location {
+        color: var(--color-2);
+        display: flex;
+    }
+
+    .more_btn {
+        color: var(--color-1);
+        text-transform: capitalize;
+        text-decoration: underline;
+    }
+    </style>
