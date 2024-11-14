@@ -1,5 +1,12 @@
 <script setup>
+import { RouterLink, useRoute } from 'vue-router';
 import logo from '@/assets/img/logo-1.png'
+
+const isActivelink = (routpath) => {
+  const route = useRoute();
+  return route.path === routpath;
+}
+
 </script>
 
 <template>
@@ -17,21 +24,21 @@ import logo from '@/assets/img/logo-1.png'
               >
             </a>
             <div class="md:ml-auto">
-              <div class="flex space-x-2">
-                <a
-                  href="index.html"
-                  class=" nav-links-active nav-links hover: rounded-md px-3 py-2"
-                  >Home</a
+              <div class="flex space-x-2 ">
+                <RouterLink
+                  to="/"
+                  :class="[isActivelink('/') ? 'active' : 'nav_link', 'nav-links', 'rounded-md', 'px-3', 'py-2']"
+                  >Home</RouterLink
                 >
-                <a
-                  href="jobs.html"
-                  class=" nav-links hover: rounded-md px-3 py-2"
-                  >Jobs</a
+                <RouterLink
+                  to="/jobs"
+                  :class="[isActivelink('/jobs') ? 'active' : 'nav_link', 'nav-links', 'rounded-md', 'px-3', 'py-2']"
+                  >Jobs</RouterLink
                 >
-                <a
-                  href="add-job.html"
-                  class=" nav-links hover: rounded-md px-3 py-2"
-                  >Add Job</a
+                <RouterLink
+                  to="/jobs/add"
+                  :class="[isActivelink('/jobs/add') ? 'active' : 'nav_link', 'nav-links', 'rounded-md', 'px-3', 'py-2']"
+                  >Add Job</RouterLink
                 >
               </div>
             </div>
@@ -47,11 +54,15 @@ import logo from '@/assets/img/logo-1.png'
     color: var(--ui-2);
     border-bottom: 1px solid var(--color-5);
 }
-.nav-links-active {
-    background-color: var(--color-2);
+.nav_link {
+  background-color: var(--color-1);
 }
 .nav-links:hover {
     background-color: var(--color-2);
   transition: all 0.1s ease;
 }
+.active {
+  background-color: var(--color-2);
+}
+
 </style>

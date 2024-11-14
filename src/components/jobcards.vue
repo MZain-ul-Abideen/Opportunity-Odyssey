@@ -50,9 +50,9 @@
                             {{ jobget.location }}
                         </span>
                     </div>
-                    <a :href="'/jobs/' + jobget.id" class="h-[36px] buttons px-4 py-2 rounded-lg text-center text-sm">
+                    <RouterLink :to="'/jobs/' + jobget.id" class="h-[36px] buttons px-4 py-2 rounded-lg text-center text-sm">
                         Read More
-                    </a>
+                    </RouterLink>
                 </div>
             </div>
         </div>
