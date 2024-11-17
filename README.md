@@ -38,7 +38,7 @@ npm install
 ```
 
 
-## 🏃 Run Locally
+## 👨‍💻 Run Locally
 
 Clone the project
 
@@ -52,7 +52,7 @@ npm run server
 npm run dev
 ```
 
-## Build for Production
+## 🏗️ Build for Production
 
 To create a production-ready build
 
