@@ -1,29 +1,76 @@
-# vue-app
+# Opportunity Odyssey
 
-This template should help get you started developing with Vue 3 in Vite.
+Opportunity Odyssey is a modern job portal built with Vue.js, designed to simplify job searching and recruitment processes. Opportunity Odyssey provides a seamless and intuitive platform for connecting job seekers with recruiters.
 
-## Recommended IDE Setup
+## 🚀 Features
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Job Listings: Browse through a variety of job opportunities tailored to different industries.
+- Mobile Responsive: Fully optimized for desktop and mobile platforms.
 
-## Customize configuration
+### User Profiles:
+- For Job Seekers: Browse through different jobs.
+- For Recruiters: Post different jobs openings and manage applications.
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## 🛠️ Tech Stack
 
-## Project Setup
+**Framework:** Vue.js
 
-```sh
+**Build Tool:** Vite.js
+
+**CSS Framework:** Tailwind CSS
+
+**API Integration:** Axios for communication with the backend
+
+**Routing:** Vue Router
+
+## 💻 Installation and Setup
+
+Follow these steps to run Opportunity Odyssey locally:
+
+1. Clone the repository:
+```bash
+git clone https://github.com/your-username/opportunity-odyssey.git
+cd opportunity-odyssey
+```
+2. Install dependencies:
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
 
-```sh
+## 🏃 Run Locally
+
+Clone the project
+
+1. Run the Back-End server:
+```bash
+npm run server
+```
+
+2. Run the Development server:
+```bash
 npm run dev
 ```
 
-### Compile and Minify for Production
+## Build for Production
 
-```sh
-npm run build
+To create a production-ready build
+
+```bash
+  npm run build
 ```
+
+## 🤝 Contributing
+
+We welcome contributions to enhance Opportunity Odyssey! To contribute:
+
+1. Fork the repository.
+2. Create a new branch (feature/your-feature).
+3. Commit your changes.
+4. Push to the branch.
+5. Open a pull request.
+
+## Authors
+For questions or feedback, feel free to reach out at:
+- **Email:**  muhammadzainulabideen02@gmail.com
+ - **LinkedIn:**  [LinkedIn](https://www.linkedin.com/in/muhammad-zain-ul-abideen-1b4219253/)
