@@ -4,6 +4,7 @@ import jobspage from '@/view/jobs_page.vue'
 import Not_foiund_page from '@/view/not_foiund_page.vue';
 import Job_detail_page from '@/view/job_detail_page.vue';
 import Add_job_page from '@/view/add_job_page.vue';
+import Edit_job_page from '@/view/edit_job_page.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -27,6 +28,11 @@ const router = createRouter({
             path: '/jobs/add',
             name: 'job_add',
             component: Add_job_page,
+        },
+        {
+            path: '/jobs/edit/:id',
+            name: 'job_edit',
+            component: Edit_job_page,
         },
         {
             path: '/:catchAll(.*)',

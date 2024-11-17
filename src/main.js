@@ -1,8 +1,11 @@
 import './assets/main.css';
 import { createApp } from 'vue';
 import App from './App.vue';
-import router from './Routers'; 
+import router from './Routers';
+import Toast from 'vue-toastification';
+import 'vue-toastification/dist/index.css';
 
 createApp(App)
-  .use(router) // Add this line to use the router
+  .use(router)
+  .use(Toast)
   .mount('#app');
